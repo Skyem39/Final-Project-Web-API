@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="topbar">
+        <div class="topbar-container">
+            <div class="topbar-left">
+                <div class="logo">
+                    <div class="logo-icon">CMS</div>
+                    <div class="logo-text">
+                        <h1>Club Management</h1>
+                        <span>System</span>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search">
+                    <input type="text" placeholder="Search..." id="reportSearch">
+                    <span class="search-icon">Search</span>
+                </div>
+                <div class="topbar-user">
+                    <span class="user-name">Arif Nurhakim</span>
+                    <div class="user-avatar">AN</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <a href="index.html">
+                        <span class="menu-icon">■</span>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="club-registration.html">
+                        <span class="menu-icon">+</span>
+                        <span class="menu-text">Register Club</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="member-registration.html">
+                        <span class="menu-icon">●</span>
+                        <span class="menu-text">Add Member</span>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="view-report.html">
+                        <span class="menu-icon">≡</span>
+                        <span class="menu-text">Reports</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html">
+                        <span class="menu-icon">i</span>
+                        <span class="menu-text">About</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="faq.html">
+                        <span class="menu-icon">?</span>
+                        <span class="menu-text">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="page-header">
+                <div class="page-title">
+                    <h2>Data Reports</h2>
+                    <p class="page-subtitle">View and manage all records</p>
+                </div>
+                <div class="page-actions">
+                </div>
+            </div>
+
+            <div id="alert" class="alert"></div>
+
+            <div class="table-card" style="margin-bottom: 28px;">
+                <div class="card-header">
+                    <h3>Clubs Report</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Club Name</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Advisor</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clubsTableBody">
+                                <tr><td colspan="5" class="table-loading"><div class="loading-skeleton"></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <div class="card-header">
+                    <h3>Members Report</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Club</th>
+                                    <th>Type</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="membersTableBody">
+                                <tr><td colspan="6" class="table-loading"><div class="loading-skeleton"></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

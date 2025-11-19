@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Member Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="topbar">
+        <div class="topbar-container">
+            <div class="topbar-left">
+                <div class="logo">
+                    <div class="logo-icon">CMS</div>
+                    <div class="logo-text">
+                        <h1>Club Management</h1>
+                        <span>System</span>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-user">
+                    <span class="user-name">Arif Nurhakim</span>
+                    <div class="user-avatar">AN</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <a href="index.html">
+                        <span class="menu-icon">■</span>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="club-registration.html">
+                        <span class="menu-icon">+</span>
+                        <span class="menu-text">Register Club</span>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="member-registration.html">
+                        <span class="menu-icon">●</span>
+                        <span class="menu-text">Add Member</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="view-report.html">
+                        <span class="menu-icon">≡</span>
+                        <span class="menu-text">Reports</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html">
+                        <span class="menu-icon">i</span>
+                        <span class="menu-text">About</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="faq.html">
+                        <span class="menu-icon">?</span>
+                        <span class="menu-text">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="page-header">
+                <div class="page-title">
+                    <h2>Add New Member</h2>
+                    <p class="page-subtitle">Register a student to a club</p>
+                </div>
+            </div>
+
+            <div id="alert" class="alert"></div>
+
+            <div class="form-container">
+                <form id="memberForm" onsubmit="registerMember(event)">
+                    <div class="form-group">
+                        <label for="studentId">Student ID *</label>
+                        <input type="text" id="studentId" required placeholder="e.g., A001">
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" required placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required placeholder="student@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="0123456789">
+                    </div>
+                    <div class="form-group">
+                        <label for="clubSelect">Select Club *</label>
+                        <select id="clubSelect" required>
+                            <option value="">Select a Club</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="membershipType">Membership Type *</label>
+                        <select id="membershipType" required>
+                            <option value="Regular">Regular Member</option>
+                            <option value="Committee">Committee Member</option>
+                            <option value="President">President</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Add Member
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

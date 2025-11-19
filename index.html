@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Club Management System Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="topbar">
+        <div class="topbar-container">
+            <div class="topbar-left">
+                <div class="logo">
+                    <div class="logo-icon">CMS</div>
+                    <div class="logo-text">
+                        <h1>Club Management</h1>
+                        <span>System</span>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search">
+                    <input type="text" placeholder="Search clubs, members..." id="globalSearch">
+                    <span class="search-icon">Search</span>
+                </div>
+                <div class="topbar-user">
+                    <span class="user-name">Arif Nurhakim</span>
+                    <div class="user-avatar">AN</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="menu-item active">
+                    <a href="index.html">
+                        <span class="menu-icon">■</span>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="club-registration.html">
+                        <span class="menu-icon">+</span>
+                        <span class="menu-text">Register Club</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="member-registration.html">
+                        <span class="menu-icon">●</span>
+                        <span class="menu-text">Add Member</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="view-report.html">
+                        <span class="menu-icon">≡</span>
+                        <span class="menu-text">Reports</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html">
+                        <span class="menu-icon">i</span>
+                        <span class="menu-text">About</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="faq.html">
+                        <span class="menu-icon">?</span>
+                        <span class="menu-text">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-title">
+                    <h2>Dashboard Overview</h2>
+                    <p class="page-subtitle">Real-time analytics and statistics</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='club-registration.html'">
+                        <span>New Club</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card stat-primary">
+                    <div class="stat-header">
+                        <div class="stat-icon-text">Clubs</div>
+                        <div class="stat-trend positive">
+                            <span>↗</span> 12%
+                        </div>
+                    </div>
+                    <div class="stat-body">
+                        <div class="stat-number" id="totalClubs">0</div>
+                        <div class="stat-label">Total Clubs</div>
+                        <div class="stat-meta">Active organizations</div>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-success">
+                    <div class="stat-header">
+                        <div class="stat-icon-text">Members</div>
+                        <div class="stat-trend positive">
+                            <span>↗</span> 8%
+                        </div>
+                    </div>
+                    <div class="stat-body">
+                        <div class="stat-number" id="totalMembers">0</div>
+                        <div class="stat-label">Total Members</div>
+                        <div class="stat-meta">Registered students</div>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-warning">
+                    <div class="stat-header">
+                        <div class="stat-icon-text">Active</div>
+                        <div class="stat-trend positive">
+                            <span>↗</span> 5%
+                        </div>
+                    </div>
+                    <div class="stat-body">
+                        <div class="stat-number" id="activeClubs">0</div>
+                        <div class="stat-label">Active Clubs</div>
+                        <div class="stat-meta">Currently operating</div>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-info">
+                    <div class="stat-header">
+                        <div class="stat-icon-text">Average</div>
+                        <div class="stat-trend neutral">
+                            <span>→</span> 0%
+                        </div>
+                    </div>
+                    <div class="stat-body">
+                        <div class="stat-number" id="avgMembers">0</div>
+                        <div class="stat-label">Avg. Members</div>
+                        <div class="stat-meta">Per club</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Club Distribution</h3>
+                        <div class="card-actions">
+                            <button class="btn-icon">⋮</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-placeholder" id="clubDistribution">
+                            <div class="chart-bars">
+                                <div class="chart-bar" style="--height: 80%; --color: #3b82f6;">
+                                    <div class="bar-label">Academic</div>
+                                    <div class="bar-value">0</div>
+                                </div>
+                                <div class="chart-bar" style="--height: 60%; --color: #10b981;">
+                                    <div class="bar-label">Sports</div>
+                                    <div class="bar-value">0</div>
+                                </div>
+                                <div class="chart-bar" style="--height: 70%; --color: #f59e0b;">
+                                    <div class="bar-label">Arts</div>
+                                    <div class="bar-value">0</div>
+                                </div>
+                                <div class="chart-bar" style="--height: 50%; --color: #8b5cf6;">
+                                    <div class="bar-label">Service</div>
+                                    <div class="bar-value">0</div>
+                                </div>
+                                <div class="chart-bar" style="--height: 65%; --color: #ec4899;">
+                                    <div class="bar-label">Tech</div>
+                                    <div class="bar-value">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Membership Growth</h3>
+                        <div class="card-actions">
+                            <button class="btn-icon">⋮</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-placeholder">
+                            <div class="growth-stats">
+                                <div class="growth-item">
+                                    <div class="growth-label">This Month</div>
+                                    <div class="growth-value">
+                                        <span class="value" id="thisMonth">0</span>
+                                        <span class="change positive">+12%</span>
+                                    </div>
+                                </div>
+                                <div class="growth-item">
+                                    <div class="growth-label">Last Month</div>
+                                    <div class="growth-value">
+                                        <span class="value" id="lastMonth">0</span>
+                                        <span class="change neutral">0%</span>
+                                    </div>
+                                </div>
+                                <div class="growth-item">
+                                    <div class="growth-label">Total Growth</div>
+                                    <div class="growth-value">
+                                        <span class="value" id="totalGrowth">0%</span>
+                                        <span class="change positive">↗</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Clubs Table -->
+            <div class="table-card">
+                <div class="card-header">
+                    <h3>Recent Clubs</h3>
+                    <div class="card-actions">
+                        <button class="btn btn-sm" onclick="window.location.href='view-report.html'">
+                            View All →
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Club Name</th>
+                                    <th>Category</th>
+                                    <th>Members</th>
+                                    <th>Advisor</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentClubsTable">
+                                <tr>
+                                    <td colspan="5" class="table-loading">
+                                        <div class="loading-skeleton"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Enhanced dashboard functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboardStats();
+            loadRecentClubs();
+        });
+
+        function loadRecentClubs() {
+            fetch('http://localhost/api.php/clubs')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const tbody = document.getElementById('recentClubsTable');
+                        tbody.innerHTML = '';
+                        
+                        const recentClubs = data.data.slice(0, 5);
+                        
+                        recentClubs.forEach(club => {
+                            const row = `
+                                <tr class="table-row-hover">
+                                    <td>
+                                        <div class="table-club-name">
+                                            <div class="club-avatar">${club.club_name.charAt(0)}</div>
+                                            <span>${club.club_name}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-${getCategoryClass(club.club_category)}">
+                                            ${club.club_category}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="member-count">
+                                            <span class="count-icon">Members:</span> 
+                                            <span id="club-${club.club_id}-members">-</span>
+                                        </span>
+                                    </td>
+                                    <td>${club.advisor_name || 'N/A'}</td>
+                                    <td>
+                                        <span class="status-badge status-active">Active</span>
+                                    </td>
+                                </tr>
+                            `;
+                            tbody.innerHTML += row;
+                        });
+
+                        loadMemberCounts(recentClubs);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading recent clubs:', error);
+                    document.getElementById('recentClubsTable').innerHTML = 
+                        '<tr><td colspan="5" class="table-error">Failed to load clubs</td></tr>';
+                });
+        }
+
+        function loadMemberCounts(clubs) {
+            fetch('http://localhost/api.php/members')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        clubs.forEach(club => {
+                            const memberCount = data.data.filter(m => m.club_id == club.club_id).length;
+                            const countEl = document.getElementById(`club-${club.club_id}-members`);
+                            if (countEl) {
+                                countEl.textContent = memberCount;
+                            }
+                        });
+                    }
+                });
+        }
+
+        function getCategoryClass(category) {
+            const classes = {
+                'Academic': 'primary',
+                'Sports': 'success',
+                'Arts & Culture': 'warning',
+                'Community Service': 'info',
+                'Technology': 'purple'
+            };
+            return classes[category] || 'default';
+        }
+
+        function loadDashboardStats() {
+            Promise.all([
+                fetch('http://localhost/api.php/clubs').then(r => r.json()),
+                fetch('http://localhost/api.php/members').then(r => r.json())
+            ]).then(([clubsData, membersData]) => {
+                if (clubsData.success && membersData.success) {
+                    const totalClubs = clubsData.data.length;
+                    const totalMembers = membersData.data.length;
+                    const avgMembers = totalClubs > 0 ? Math.round(totalMembers / totalClubs) : 0;
+                    
+                    document.getElementById('avgMembers').textContent = avgMembers;
+                    document.getElementById('thisMonth').textContent = totalMembers;
+                    document.getElementById('lastMonth').textContent = Math.max(0, totalMembers - 2);
+                    
+                    updateChartData(clubsData.data);
+                }
+            });
+        }
+
+        function updateChartData(clubs) {
+            const categories = {};
+            clubs.forEach(club => {
+                categories[club.club_category] = (categories[club.club_category] || 0) + 1;
+            });
+
+            const chartBars = document.querySelectorAll('.chart-bar');
+            const categoryMap = {
+                'Academic': 0,
+                'Sports': 1,
+                'Arts & Culture': 2,
+                'Community Service': 3,
+                'Technology': 4
+            };
+
+            Object.keys(categories).forEach(cat => {
+                const index = categoryMap[cat];
+                if (index !== undefined && chartBars[index]) {
+                    const bar = chartBars[index];
+                    bar.querySelector('.bar-value').textContent = categories[cat];
+                    const maxCount = Math.max(...Object.values(categories));
+                    const height = (categories[cat] / maxCount) * 100;
+                    bar.style.setProperty('--height', `${height}%`);
+                }
+            });
+        }
+
+        document.getElementById('globalSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            console.log('Searching for:', searchTerm);
+        });
+    </script>
+</body>
+</html>
